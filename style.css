@@ -1,0 +1,122 @@
+body {
+	font-family: sans-serif;
+}
+
+.grid {
+	display: grid;
+	height: 500px;
+	width: 40%;
+	grid-template-rows: 200px 18% 2% 2% 2%;
+	grid-template-columns:;
+	margin-top: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	grid-gap: 5px;
+}
+
+.profile {
+	text-align: center;
+	grid-column-start:1;
+	grid-column-end:1;
+	grid-row-start:2;
+	grid-row-end:2;
+}
+
+.profile-image {
+	grid-column-start:1;
+	grid-column-end:1;
+	grid-row-start:1;
+	grid-row-end:1;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.profile-image, img {
+	height: 200px;
+	width: 200px;
+}
+
+li {
+	display: inline;
+}
+
+ul {
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0px;
+}
+
+i {
+	padding: 5px;
+}
+
+a {
+	text-decoration: underline;
+	color: black;
+}
+
+a:hover {
+	color: #2c3e50;
+}
+
+.blog {
+	padding-left: 20px;
+	padding-top: 20px;
+}
+
+.about {
+	padding-left: 30px;
+	padding-top: 20px;	
+}
+
+.skills {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+a:hover {
+	color: #3498db;
+}
+
+.recommendation {
+	margin-top: 50px;
+	text-align: center;
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.rec {
+	padding: 5px;
+}
+
+.content-list {
+	text-align: left !important;
+	margin-left: 30%;
+}
+
+.content-header {
+	text-align: center;
+}
+
+@media only screen and (max-width: 800px) {
+
+
+	.grid {
+		display: grid;
+		height: 600px;
+		width: 100%;
+		grid-template-rows: 250px 18% 2% 2% 2%;
+		grid-template-columns:;
+		margin-top: 25px;
+		margin-left: auto;
+		margin-right: auto;
+		grid-gap: 5px;
+	}
+
+	.profile-image, img {
+		height: 250px;
+		width: 250px;
+	}
+
+}

@@ -1,0 +1,493 @@
+<!DOCTYPE <html>
+<head>
+	<title>Resources</title>
+	<link rel="stylesheet" type="text/css" href="resources.css">
+</head>
+<body>
+	<h1>Personal Resources</h1>
+	<p>A compilation of personal resources and documentation</p>
+	<strong><p>Table of Contents:</p></strong>
+	<ul>
+		<a href="#bootstrap"><li>Bootstrap Setup</li></a>
+		<a href="#ruby"><li>Ruby</li></a>
+		<a href="#brain-nosh"><li>Ruby on Rails App Build: Podcast Mash</li></a>
+		<a href="#sql"><li>SQL</li></a>
+	</ul>
+	<hr>
+<h2 id="bootstrap">Bootstrap Setup</h2>	
+	<ul>
+		<a href="https://getbootstrap.com/docs/4.0/getting-started/introduction/
+		"><li>Starter Template</li></a>
+		<a href="https://getbootstrap.com/docs/4.0/layout/overview/"><li>Overview</li></a>
+	</ul>
+	<hr>
+<h2 id="ruby">Ruby</h2>	
+	<ul>
+		<a href="http://tutorials.jumpstartlab.com/projects/ruby_in_100_minutes.html"><li>Ruby in 100 Minutes</li></a>
+		<br>
+			<ul>
+				<strong>General Ruby Information</strong>
+				<ul>
+					<li>"Programming is all about creating abstractions, and in order to create an abstraction we must be able to assign names to things. Variables are a way of creating a name for a piece of data."</li>
+					<li>"In English we read left-to-right, [...]. But when evaluating an assignment using the single equals (=), Ruby actually evaluates the right side first"</li>
+					<li>"Because Ruby’s integers are objects they have methods." This allows for us to call the .times method on the number 5, whereas with a language like JavaScript, you'd use a longer and harder-to-read for statement</li>
+				</ul>
+				<br>
+				<strong>Variable Naming Principles:</strong>
+				<ul>
+					<li>use snake case where each word in the name is lowercase and connected by underscores (_)</li>
+					<li>are named after the meaning of their contents, not the type of their contents</li>
+					<li>aren’t abbreviated</li>
+					<li>Good variable names might be count, students_in_class, or first_lesson.</li>
+				</ul>
+				<br>
+				<strong>Common String Methods</strong>
+				<ul>
+					<li>.length</li>
+					<li>.split</li>
+					<li>.sub and .gsub</li>
+				</ul>
+				<br>
+				<strong>Combining Strings and Variables</strong>
+				<ul>
+					<li>Concatenation</li>
+					<li>Interpolation</li>
+					<li>Executing Code inside Interpolation</li>
+				</ul>
+				<br>
+				<strong>Symbols</strong>
+				<ul>
+					<li>"If you’re new to programming, think of a symbol as a stripped down string that has barely any methods and no string interpolation."</li>
+					<li>"If you’re an experienced programmer, think of a symbol as a "named integer". It doesn’t matter what actual value the symbol references. All we care about is that any reference to that value within the VM will give back the same value. Symbols are thus defined in a global symbol table and their value cannot change."</li>
+				</ul>
+				<br>				
+			</ul>
+		<a href="http://tutorials.jumpstartlab.com/topics/testing/intro-to-tdd.html"><li>Intro to Test-Driven-Development</li></a>
+	</ul>
+	<hr>	
+<h2 id="brain-nosh">Ruby on Rails App Build: Podcast Mash</h2>
+	<ol>
+		<a href="#new-app"><li>Create new ruby app</li></a>
+		<a href="#verify"><li>Verify it is live on localhost</li></a>
+		<a href="#welcome"><li>Create Welcome Controller and View</li></a>
+		<a href="#root"><li>Set root route</li></a>
+		<a href="#bootstrap"><li>Add Bootstrap</li></a>
+		<a href="#navbar"><li>Add Navbar</li></a>
+		<a href="#render"><li>Render Navbar in Application.html.erb</li></a>
+		<a href="#index-page"><li>Style the Index Page</li></a>
+		<a href="#about-page"><li>Create the About Page View</li></a>
+		<a href="#about-route"><li>Update the route file for the About Page</li></a>
+		<a href="#install-devise"><li>Install Devise</li></a>
+		<a href="#dynamic-nav"><li>Dynamic Navigation Bar</li></a>
+		<a href="#quiz-list"><li>Set Up First Quiz List View</li></a>
+		<a href="#quiz-view"><li>Set Up First Quiz View</li></a>
+		<a href="#merit-gem"><li>Set Up Merit Gem</li></a>
+		<a href="#deploy"><li>Prepare to Deploy to Heroku</li></a>
+	</ol>
+	<hr>
+	<h4 id="new-app">Create new ruby app</h4>
+	<pre>
+		<code>
+	rails new podcast-mash app
+		</code>
+	</pre>
+	<hr>
+	<h4 id="verify">Verify it is live on localhost</h4>
+	<p>Open terminal. Navigate into app folder. Run the following command and then access <a href="http://localhost:3000/">localhost</a></p>
+	<pre>
+		<code>
+	rails s
+
+	(Exit the server with control + c)
+		</code>
+	</pre>
+	<hr>
+	<h4 id="welcome">Create Welcome Controller and View</h4>
+	<ul>
+		<li><a href="http://guides.rubyonrails.org/getting_started.html#creating-the-blog-application">Getting Started Guide</a></li>
+	</ul>
+	<pre>
+		<code>
+	rails g controller Welcome index
+		</code>
+	</pre>
+	<p>Results:</p>
+	<img src="https://res.cloudinary.com/deallen7/image/upload/v1522444179/Screen_Shot_2018-03-30_at_2.09.10_PM.png">
+	<br>
+	<hr>
+	<h4 id="root">Set root route</h4>
+	<ul>
+		<li><a href="http://guides.rubyonrails.org/getting_started.html#creating-the-blog-application">Getting Started Guide</a></li>
+	</ul>
+	<pre>
+		<code>
+	(In the config/routes.rb file)
+
+	root 'welcome#index'
+		</code>
+	</pre>
+	<hr>	
+<h4 id="bootstrap">Add Bootstrap</h4>
+	<ul>
+		<li><a href="https://github.com/twbs/bootstrap-rubygem">Bootstrap Github</a></li>
+		<li><a href="https://getbootstrap.com/docs/3.3/getting-started/">Bootstrap Getting Started</a></li>
+	</ul>
+	<pre>
+	In the Gemfile:	
+		<code>
+	gem 'bootstrap', '~> 4.0.0'
+	gem 'jquery-rails'
+		</code>
+	</pre>
+	<pre>
+	Then, in terminal:	
+		<code>
+	bundle install
+		</code>
+	</pre>
+	<pre>
+	Rename application.css file to application.scss, and add:
+		<code>
+			
+	// Custom bootstrap variables must be set or imported *before* bootstrap.
+	@import "bootstrap";
+		</code>
+	</pre>	
+	<pre>
+	In the application.js file, insert above "//= require rails-ujs":
+		<code>
+	//= require jquery3
+	//= require popper
+	//= require bootstrap
+		</code>
+	</pre>
+	<hr>
+	<h4 id="navbar">Add Navbar</h4>
+	<ul>
+		<li><a href="https://getbootstrap.com/docs/4.0/components/navbar/">Bootstrap Components</a></li>
+	</ul>
+	<pre>
+	Create a new partial view file in views/welcome called "-nav.html.erb"
+	Copy/paste in your Bootstrap comp
+	</pre>
+	<hr>
+	<h4 id="render">Render Navbar in Application.html.erb</h4>
+	<pre>
+		<code>
+	<%= render '/welcome/nav' %>
+		</code>
+	</pre>
+	<hr>
+	<h4 id="index-page">Style the Index Page</h4>
+	<pre>
+		<code>
+	I'm not going to include the style code. See github.
+		</code>
+	</pre>
+	<hr>	
+	<h4 id="about-page">Create the About Page View</h4>
+	<pre>
+	In view/welcome, create the file:
+		<code>
+	about.html.erb
+		</code>
+	</pre>
+	<hr>	
+	<h4 id="about-route">Update the route file for the About Page</h4>
+	<pre>
+	Update the route file:
+		<code>
+	get 'welcome/about'
+		</code>
+	</pre>
+	<hr>
+	<h4 id="install-devise">Install Devise</h4>
+	<ul>
+		<a href="https://github.com/plataformatec/devise"><li>Devise Gem on Github</li></a>
+	</ul>
+	<pre>
+	Add to the Gemfile:
+		<code>
+	gem 'devise'
+		</code>
+	</pre>
+	<pre>
+	Run the install in the terminal:
+		<code>
+	bundle install
+		</code>
+	</pre>	
+	<pre>
+	Run the generator in the terminal:
+		<code>
+	rails generate devise:install
+		</code>
+	</pre>		
+	<pre>
+	Add to config/environments/development.rb:
+		<code>
+	config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+		</code>
+	</pre>		
+	<pre>
+	Copy the Devise views to your app:
+		<code>
+	rails g devise:views		
+		</code>
+	</pre>
+	<pre>
+	Generate User model in command line:
+		<code>
+	rails generate devise User
+		</code>
+	</pre>	
+	<pre>
+	Rake the database, create the migration file
+		<code>
+	rake db:migrate
+		</code>
+	</pre>	
+	<hr>		
+	<h4 id="dynamic-nav">Dynamic Navigation Bar</h4>		
+	<ul>
+		<a href="https://www.youtube.com/watch?v=makJ_ZR0SKQ&t=393s&list=PLP6PvXLevG9KznGLiu0AEg25iSRwwhcO-&index=8"><li>DevFactor Twitter Devise Example</li></a>
+		<a href="https://www.youtube.com/watch?v=PWoOK0T5Eeo&index=9&list=PLP6PvXLevG9KznGLiu0AEg25iSRwwhcO-"><li>DevFactor Twitter Dynamic Navigation</li></a>
+	</ul>		
+	<pre>
+	(1) Set up two new partials in the views/layouts folder	
+		<code>
+	_nav_user.html.erb
+	_nav_guest.html.erb
+		</code>
+	</pre>
+	<pre>
+	(2) Copy/paste the old nav-bar partial into the two new partials
+	</pre>	
+	<pre>
+	(3) If/then statement in the _nav.html.erb partial
+		<code>
+	<% if !user_signed_in? %>
+		<%= render '/layouts/nav_guest' %>
+	<% else %>
+		<%= render '/layouts/nav_user' %>
+	<% end %>
+		</code>
+	</pre>
+	<pre>
+	(4) Add devise links to the _nav_user navigation bar
+		<code>
+	<%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+	<%= link_to "Settings", edit_user_registration_path %>
+
+	You may want to wrap the embedded ruby in a span and add the drop-down item class like so:
+	&lt;span class="dropdown-item"><%= link_to "Settings", edit_user_registration_path %>&lt;/span>
+		</code>
+	</pre>
+	<pre>
+	(5) Examine the application controller. You may need to remove the before action filter	from the application controller.
+		<code>
+	before_action :authenticate_user!
+		</code>
+	</pre>		
+	<pre>
+	(6) Add devise links to the _nav_guest navigation bar 	
+		<code>
+	<%= link_to "Sign up", new_user_registration_path %>	
+	<%= link_to "Sign in", new_user_session_path %>
+		</code>
+	</pre>
+	<hr>
+	<h4 id="quiz-list">Set Up First Quiz List View</h4>
+	<pre>
+	(1) Create new view file under views/welcome:	
+		<code>
+	healthcast_quiz_home.html.erb
+		</code>
+	</pre>
+	<pre>
+	(2) Enclose page content in two containers:
+		<code>
+	&lt;div class="container">
+		&lt;div class="quiz-home">
+		</code>
+	</pre>
+	<pre>
+	(3) Display "grid" in the application.scss file, and other styling choices:
+		<code>
+	.quiz-home {
+		display: grid;
+		grid-template-columns:90%;
+		grid-template-rows:repeat(5, 80px);
+		height:1000px;
+		width:90%;
+		margin-top:50px;
+		grid-gap: 15px;
+	}
+		</code>
+	</pre>
+	<pre>
+	(4) Establish route to page in the config/routes.rb file:	
+		<code>
+	get 'welcome/healthcast_quiz_home'
+		</code>
+	</pre>	
+	<pre>
+	(5) Set up link from index page to quiz list page	
+		<code>
+	&lt;span class="quiz-link"><%= link_to "Quiz List", welcome_healthcast_quiz_home_path %>&lt;/span>
+		</code>
+	</pre>
+	<hr>
+	<h4 id="quiz-view">Set Up First Quiz View</h4>
+	<pre>
+	(1)	create new view in the views/welcome file:
+		<code>
+	healthcast_quiz_morley_robbins.html.erb
+		</code>
+	</pre>
+	<pre>
+	(2)	create new route in the config/routes.rb file:
+		<code>
+	get 'welcome/healthcast_quiz_morley_robbins'
+		</code>
+	</pre>	
+	<pre>
+	(3)	Check routes in the terminal:
+		<code>
+	rake routes
+		</code>
+	</pre>		
+	<pre>
+	(4)	Now using the route, link healthcast quiz list to first quiz
+		<code>
+	&lt;h5><%= link_to "HealthCast Now: Morley Robbins", welcome_healthcast_quiz_morley_robbins_path %>&lt;/h5>
+		</code>
+	</pre>	
+	<pre>
+	(5)	Set up style of Quiz page
+		<code>
+	
+		</code>
+	</pre>	
+	<hr>
+	<h4 id="merit-gem">Set Up Merit Gem</h4>
+	<ul>
+		<a href="https://github.com/merit-gem/merit"><li>Github Page</li></a>
+		<a href=""><li></li></a>
+	</ul>
+	<pre>
+	(1) Add gem to Gemfile
+		<code>
+	gem 'merit'
+		</code>
+	</pre>
+	<pre>
+	(2) Bundle install in terminal
+		<code>
+	bundle install
+		</code>
+	</pre>
+	<pre>
+	(3) Run:
+		<code>
+	rails g merit:install
+		</code>
+	</pre>	
+	<pre>
+	(4) Run:
+		<code>
+	rails g merit User
+		</code>
+	</pre>	
+	<pre>
+	(5) Run:
+		<code>
+	rake db:migrate
+		</code>
+	</pre>		
+	<pre>
+	(6) Configure Reputation Rules in app/models/merit/point_rules.rb
+		<code>
+	
+		</code>
+	</pre>
+	<pre>
+	(7) Define badges in config/initializers/merit.rb
+		<code>
+	
+		</code>
+	</pre>		
+	<hr>
+	<h4 id="deploy">Prepare to Deploy to Heroku</h4>	
+	<pre>
+	(1) Move gem 'sqlite3' to development block	
+		<code>
+	group :development, :test do
+	  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+	  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+	  # Adds support for Capybara system testing and selenium driver
+	  gem 'capybara', '~> 2.13'
+	  gem 'selenium-webdriver'
+	  gem 'sqlite3'
+	end
+		</code>
+	</pre>	
+	<pre>
+	(2) Add pg gem, rails 12 factor gem, and specify ruby version
+		<code>
+	ruby '2.4.1'
+	gem 'pg', '~> 0.18'
+	gem 'rails_12factor', group: :production
+		</code>
+	</pre>
+	<pre>
+	(3) Commit code to github
+		<code>
+	git add .
+	git commit -m "prepare for heroku deployment"
+	git push
+		</code>
+	</pre>
+	<pre>
+	(4) Create new heroku app
+		<code>
+	heroku create
+		</code>
+	</pre>
+	<pre>
+	(5) Push to heroku	
+		<code>
+	git push heroku master
+		</code>	
+	</pre>
+	<pre>
+	(6) rake database
+		<code>
+	heroku run rake db:migrate
+		</code>
+	</pre>
+	<hr>	
+	<h2 id="sql">SQL</h2>
+	<p>SQL = Structured Query Language. SQL is a programming language used for managing data stored in relational databases.</p>
+	<h3>Contents:</h3>
+	<ul>
+		<li>Vocabulary</li>
+		<li>Create</li>
+		<li>Insert</li>
+		<li>Select</li>
+		<li>Update</li>
+		<li>Alter</li>
+		<li>Delete</li>
+		<li>Constraints</li>
+		<li>Generalizations</li>
+	</ul>
+	<br>
+	<pre>
+	(1) Create a Table
+		<code>
+
+		</code>
+	</pre>
+	<hr>
+</body>
+</html>
