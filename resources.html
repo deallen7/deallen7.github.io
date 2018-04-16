@@ -8,7 +8,7 @@
 	<p>A compilation of personal resources and documentation</p>
 	<strong><p>Table of Contents:</p></strong>
 	<ul>
-		<a href="owasp"><li>OWASP Top Ten Project</li></a>
+		<a href="#owasp"><li>OWASP Top Ten Project</li></a>
 		<a href="#bootstrap"><li>Bootstrap Setup</li></a>
 		<a href="#ruby"><li>Ruby</li></a>
 		<a href="#brain-nosh"><li>Ruby on Rails App Build: Podcast Mash</li></a>
@@ -480,9 +480,24 @@
 	</pre>
 	<hr>
 	<h2 id="js">JavaScript</h2>
-	<ul>
+	<ul><strong>Links:</strong>
 		<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence">JS Operator Precendence Table</a></li>
-		<li><a href="https://developer.mozilla.org/en-US/docs/Web/Events">Event Listeners</a></li>
+		<li><a href="https://developer.mozilla.org/en-US/docs/Web/Events">Event Listeners Reference Table</a></li>
+	</ul>
+	<ul><strong>Notes:</strong>
+		<li>When calling a function within an eventListener, do not call the function with (); Instead, leave out the (); the eventListener is responsible for calling the function upon the event
+			<pre>This:
+				<code>
+	document.querySelector('.btn-roll').addEventListener('click', btn);
+				</code>
+			</pre>
+			<pre>Instead of this:
+				<code>
+	document.querySelector('.btn-roll').addEventListener('click', btn());
+				</code>
+			</pre>			
+
+		</li>
 	</ul>
 	<hr>	
 	<h2 id="sql">SQL</h2>
