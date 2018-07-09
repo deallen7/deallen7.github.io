@@ -15,7 +15,6 @@
 		<a href="#js"><li>JavaScript</li></a>
 		<a href="#sql"><li>SQL</li></a>
 		<a href="#api"><li>APIs</li></a>
-		<a href="#python"><li>Python</li></a>
 	</ul>
 	<hr>
 	<h2 id="owasp">OWASP Top Ten Project</h2>
@@ -525,5 +524,29 @@
 		</code>
 	</pre>
 	<hr>
+	<h2 id="api">APIs</h2>
+	<p>API = Application programming interface. Essentially a website that speaks in JSON or XML rather than HTML/CSS.</p>
+	<p>APIs operate via a set of strict rules. Strict because computers are dummies and need to be told EXACTLY what to do.</p>
+	<p>A valid API request includes:</p>
+		<ol>
+			<li>URL (Uniform Resource Locator</li>
+			<li>Method (GET, POST, PUT, DELETE)</li>
+			<li>Headers (meta information; language, device type, preferred formats, etc.)</li>
+			<li>Body (data)</li>
+		</ol>
+	<p>A server will respond to the request with:</p>
+		<ol>
+			<li>Status Code (200, 404, 503, etc.)</li>
+			<li>Headers</li>
+			<li>Body</li>
+		</ol>
+	<p>Concerning JSON or XML, you would specify the language being sent with a Content-type header, and specify the language being sent back with an Accept header.</p>
+	<p>There are two main types of APIs: SOAP and REST APIs.</p>
+	<p>Useful links:</p>
+	<ul>
+		<li><a href="https://en.wikipedia.org/wiki/Application_programming_interface">APIs Wiki</a></li>
+		<li><a href="https://zapier.com/learn/apis/">Zapier API introduction</a></li>
+		<li><a href="https://trailhead.salesforce.com/modules/api_basics/units/api_basics_overview">Get to know the Salesforce APIs</a></li>
+	</ul>
 </body>
 </html>
